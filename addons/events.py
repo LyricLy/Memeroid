@@ -13,7 +13,7 @@ class Events:
 
     async def on_message(self, message):
         #auto update
-        if message.author.name == "GitHub" and message.channel == self.bot.git_channel:
+        if message.author.name == "GitHub" and message.author.discriminator == "0000":
             print("Pulling changes!")
             git.pull()
             print("Changes pulled!")

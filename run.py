@@ -68,10 +68,9 @@ async def on_ready():
         bot.server = server
         if bot.all_ready:
             break
-            
-        bot.git_channel = discord.utils.get(server.channels, name="rules")
+                 
+        bot.rules_channel = discord.utils.get(server.channels, name="rules")
         bot.log_channel = discord.utils.get(server.channels, name="mod-log")
-        bot.git_channel = discord.utils.get(server.channels, name="git")
             
         print("Initialized on {}.".format(server.name))
         
