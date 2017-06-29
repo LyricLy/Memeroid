@@ -24,16 +24,16 @@ class Events:
         except discord.errors.Forbidden: # doesn't accept DMs from non-friends
             pass
         await self.bot.add_roles(member, self.bot.idiots_role)
-        await self.bot.send_message(self.bot.logs_channel, ":exclamation: Member joined: {}#{}".format(member.name, member.discriminator))
+        await self.bot.send_message(self.bot.log_channel, ":exclamation: Member joined: {}#{}".format(member.name, member.discriminator))
 
     async def on_member_remove(self, member):
-        await self.bot.send_message(self.bot.logs_channel, ":exclamation: Member left: {}#{}".format(member.name, member.discriminator))
+        await self.bot.send_message(self.bot.log_channel, ":exclamation: Member left: {}#{}".format(member.name, member.discriminator))
 
     async def on_member_ban(self, member):
-        await self.bot.send_message(self.bot.logs_channel, ":exclamation: Member banned: {}#{}".format(member.name, member.discriminator))
+        await self.bot.send_message(self.bot.log_channel, ":exclamation: Member banned: {}#{}".format(member.name, member.discriminator))
 
     async def on_member_unban(self, server, member):
-        await self.bot.send_message(self.bot.logs_channel, ":exclamation: Member unbanned: {}#{}".format(member.name, member.discriminator))
+        await self.bot.send_message(self.bot.log_channel, ":exclamation: Member unbanned: {}#{}".format(member.name, member.discriminator))
 
 def setup(bot):
     bot.add_cog(Events(bot))
