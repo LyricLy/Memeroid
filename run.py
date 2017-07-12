@@ -72,7 +72,7 @@ async def on_ready():
         bot.rules_channel = discord.utils.get(server.channels, name="rules")
         bot.log_channel = discord.utils.get(server.channels, name="mod-log")
         
-        bot.muted_role = discord.utils.get(server.channels, name="Muted")
+        bot.muted_role = discord.utils.get(server.roles, name="Muted")
             
         print("Initialized on {}.".format(server.name))
         
