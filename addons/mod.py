@@ -12,9 +12,9 @@ class Moderation:
     @commands.has_permissions(kick_members=True)    
     @commands.command(pass_context=True)
     async def kick(self, ctx, *, member):
-        found_member = self.bot.get_member(member)
+        found_member = self.bot.server.get_member(member)
         if not found_member:
-            found_member = self.bot.get_member_named(member)
+            found_member = self.bot.server.get_member_named(member)
         if not found_member:
             try:
                 found_member = ctx.message.mentions[0]
@@ -29,9 +29,9 @@ class Moderation:
     @commands.has_permissions(ban_members=True)    
     @commands.command(pass_context=True)
     async def ban(self, ctx, *, member):
-        found_member = self.bot.get_member(member)
+        found_member = self.bot.server.get_member(member)
         if not found_member:
-            found_member = self.bot.get_member_named(member)
+            found_member = self.bot.server.get_member_named(member)
         if not found_member:
             try:
                 found_member = ctx.message.mentions[0]
@@ -46,9 +46,9 @@ class Moderation:
     @commands.has_permissions(ban_members=True)    
     @commands.command(pass_context=True)
     async def mute(self, ctx, *, member):
-        found_member = self.bot.get_member(member)
+        found_member = self.bot.server.get_member(member)
         if not found_member:
-            found_member = self.bot.get_member_named(member)
+            found_member = self.bot.server.get_member_named(member)
         if not found_member:
             try:
                 found_member = ctx.message.mentions[0]
@@ -63,9 +63,9 @@ class Moderation:
     @commands.has_permissions(ban_members=True)    
     @commands.command(pass_context=True)
     async def unmute(self, ctx, *, member):
-        found_member = self.bot.get_member(member)
+        found_member = self.bot.server.get_member(member)
         if not found_member:
-            found_member = self.bot.get_member_named(member)
+            found_member = self.bot.server.get_member_named(member)
         if not found_member:
             try:
                 found_member = ctx.message.mentions[0]
