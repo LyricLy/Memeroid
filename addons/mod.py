@@ -23,7 +23,7 @@ class Moderation:
         if not found_member:
             await self.bot.say("That user could not be found.")
         else:
-            await self.bot.ban(found_member)
+            await self.bot.kick(found_member)
             await self.bot.say("Successfully kicked user {0.name}#{0.discriminator}!".format(found_member))
     
     @commands.has_permissions(ban_members=True)    
